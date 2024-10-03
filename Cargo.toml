@@ -1,32 +1,38 @@
 [package]
 name = "window-shadows"
 description = "Add native shadows to your windows."
-authors = [ "Tauri Programme within The Commons Conservancy" ]
+authors = ["Tauri Programme within The Commons Conservancy"]
 version = "0.2.2"
 edition = "2021"
 license = "Apache-2.0 OR MIT"
 readme = "README.md"
 repository = "https://github.com/tauri-apps/tauri-plugin-shadows"
 documentation = "https://docs.rs/tauri-plugin-shadows"
-keywords = [ "shadows", "windowing", "gui" ]
-categories = [ "gui" ]
+keywords = ["shadows", "windowing", "gui"]
+categories = ["gui"]
 
 [package.metadata.docs.rs]
 default-target = "x86_64-pc-windows-msvc"
-targets = [ "x86_64-apple-darwin", "x86_64-pc-windows-msvc" ]
+targets = ["x86_64-apple-darwin", "x86_64-pc-windows-msvc"]
 
 [dependencies]
 raw-window-handle = "0.5"
 
 [dev-dependencies]
 tao = { version = "0.25", features = ["rwh_05"] }
-winit = {version = "0.29", default-features = false, features = ["x11", "wayland", "wayland-dlopen", "wayland-csd-adwaita", "rwh_05"] }
+winit = { version = "0.29", default-features = false, features = [
+	"x11",
+	"wayland",
+	"wayland-dlopen",
+	"wayland-csd-adwaita",
+	"rwh_05",
+] }
 
 [target."cfg(target_os = \"windows\")".dependencies]
 windows-sys = { version = "0.52.0", features = [
-  "Win32_Foundation",
-  "Win32_Graphics_Dwm",
-  "Win32_UI_Controls"
+	"Win32_Foundation",
+	"Win32_Graphics_Dwm",
+	"Win32_UI_Controls",
 ] }
 
 [target."cfg(target_os = \"macos\")".dependencies]

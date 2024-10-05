@@ -12,7 +12,10 @@ fn main() {
 
 	let event_loop = EventLoop::new();
 
-	let window = WindowBuilder::new().with_decorations(false).build(&event_loop).unwrap();
+	let window = WindowBuilder::new()
+		.with_decorations(false)
+		.build(&event_loop)
+		.unwrap();
 
 	set_shadow(&window, true).expect("Unsupported platform!");
 
@@ -21,7 +24,10 @@ fn main() {
 	event_loop.run(move |event, _, control_flow| {
 		*control_flow = ControlFlow::Wait;
 
-		if let Event::WindowEvent { event: WindowEvent::CloseRequested, .. } = event {
+		if let Event::WindowEvent {
+			event: WindowEvent::CloseRequested, ..
+		} = event
+		{
 			*control_flow = ControlFlow::Exit
 		}
 	});

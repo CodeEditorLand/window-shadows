@@ -1,14 +1,9 @@
 {
-	"name": "app",
-	"version": "1.0.0",
-	"description": "",
-	"license": "MIT OR Apache-2.0",
-	"author": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
 	"dependencies": {
 		"@tauri-apps/cli": "2.0.2"
-	}
+	},
+	"description": "",
+	"main": "index.js",
+	"name": "app",
+	"scripts": {}
 }

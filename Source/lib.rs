@@ -37,6 +37,7 @@ pub fn set_shadow(
 		#[cfg(target_os = "macos")]
 		raw_window_handle::RawWindowHandle::AppKit(handle) => {
 			use cocoa::{appkit::NSWindow, base::id};
+
 			use objc::runtime::{NO, YES};
 
 			unsafe {
@@ -53,11 +54,14 @@ pub fn set_shadow(
 			};
 
 			let m = if enable { 1 } else { 0 };
+
 			let margins =
 				MARGINS { cxLeftWidth:m, cxRightWidth:m, cyTopHeight:m, cyBottomHeight:m };
+
 			unsafe {
 				DwmExtendFrameIntoClientArea(handle.hwnd as _, &margins);
 			};
+
 			Ok(())
 		},
 		_ => Err(Error::UnsupportedPlatform),

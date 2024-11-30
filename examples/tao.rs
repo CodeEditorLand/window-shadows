@@ -8,6 +8,7 @@ fn main() {
 		event_loop::{ControlFlow, EventLoop},
 		window::WindowBuilder,
 	};
+
 	use window_shadows::set_shadow;
 
 	let event_loop = EventLoop::new();

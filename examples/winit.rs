@@ -4,7 +4,6 @@
 
 fn main() {
 	use window_shadows::set_shadow;
-
 	use winit::{
 		event::{Event, WindowEvent},
 		event_loop::{ControlFlow, EventLoop},

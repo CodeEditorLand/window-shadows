@@ -37,7 +37,6 @@ pub fn set_shadow(
 		#[cfg(target_os = "macos")]
 		raw_window_handle::RawWindowHandle::AppKit(handle) => {
 			use cocoa::{appkit::NSWindow, base::id};
-
 			use objc::runtime::{NO, YES};
 
 			unsafe {
